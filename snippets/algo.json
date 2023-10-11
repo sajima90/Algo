@@ -1,0 +1,120 @@
+{
+    "debut": {
+        "prefix": "debut",
+        "body": [
+            "DEBUT",
+            "$0",
+            "FIN"
+        ],
+        "description": "Début d'algorithme"
+    },
+    "fin": {
+        "prefix": "fin",
+        "body": [
+            "FIN",
+            "$0"
+        ],
+        "description": "Fin d'algorithme"
+    },
+    "si": {
+        "prefix": "si",
+        "body": [
+            "si $1 alors",
+            "\t$0",
+            "fsi"
+        ],
+        "description": "Structure conditionnelle SI"
+    },
+    "sinon": {
+        "prefix": "sinon",
+        "body": [
+            "sinon",
+            "\t$0"
+        ],
+        "description": "Partie SINON d'une structure SI"
+    },
+    "pour": {
+        "prefix": "pour",
+        "body": [
+            "POUR $1 DE $2 A $3 ²",
+            "\t$0",
+            "FPOUR"
+        ],
+        "description": "Boucle POUR"
+    },
+    "tantque": {
+        "prefix": "tantque",
+        "body": [
+            "tq $1 faire",
+            "\t$0",
+            "ftq"
+        ],
+        "description": "Boucle TANTQUE"
+    },
+    "afficher": {
+        "prefix": "afficher",
+        "body": [
+            "affichier $1",
+            "$0"
+        ],
+        "description": "Afficher une valeur"
+    },
+    "lire": {
+        "prefix": "lire",
+        "body": [
+            "lire $1",
+            "$0"
+        ],
+        "description": "Lire une valeur"
+    },
+    "←": {
+        "prefix": "<-",
+        "body": "←$0",
+        "description": "Flèche gauche"
+    },
+    "≤": {
+        "prefix": "<=",
+        "body": "≤$0",
+        "description": "Inférieur ou égal à"
+    },
+    "≥": {
+        "prefix": ">=",
+        "body": "≥$0",
+        "description": "Supérieur ou égal à"
+    },
+    "≠": {
+        "prefix": "!=",
+        "body": "≠$0",
+        "description": "Différent de"
+    },
+    "•": {
+        "prefix": "•",
+        "body": "•$0",
+        "description": "Point médian"
+    },
+    "±": {
+        "prefix": "±",
+        "body": "±$0",
+        "description": "Plus ou moins"
+    },
+    "→": {
+        "prefix": "->",
+        "body": "→$0",
+        "description": "Flèche droite"
+    },
+    "√": {
+        "prefix": "racine",
+        "body": "√$0",
+        "description": "Racine carrée"
+    },
+    "π": {
+        "prefix": "pi",
+        "body": "π$0",
+        "description": "Pi"
+    },
+    "©": {
+        "prefix": "C.",
+        "body": "©$0",
+        "description": "Copyright"
+    }
+}

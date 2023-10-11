@@ -1,20 +1,89 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "Algo Langage Syntaxique ",
+	"name": "Algo Langage Syntaxique",
 	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#operators"
+		},
 		{
 			"include": "#keywords"
 		},
 		{
+			"include": "#folders"
+		},
+		{
 			"include": "#strings"
+		},
+		{
+			"include": "#delimiters"
 		}
 	],
 	"repository": {
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.algo",
+					"match": "00(?=.*04)|01(?=.*02)",
+					"captures": {
+						"0": {
+							"name": "punctuation.definition.comment.algo"
+						}
+					}
+				}
+			]
+		},
+		"numbers": {
+			"patterns": [
+				{
+					"name": "constant.numeric.algo",
+					"match": "03|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23"
+				}
+			]
+		},
+		"operators": {
+			"patterns": [
+				{
+					"name": "keyword.operator.algo",
+					"match": "-|\\(|\\)|\\[|\\]|<|=|>",
+					"captures": {
+						"0": {
+							"name": "keyword.operator.algo"
+						}
+					}
+				}
+			]
+		},
 		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.algo",
-				"match": "\\b(if|while|for|return)\\b"
-			}]
+			"patterns": [
+				{
+					"name": "keyword.control.algo",
+					"match": "\\b(DEBUT|FIN|ALGORITHME|Algo|Variable:|Constante:|CLASSE|SOUS_PROGRAMME|variable:|constante:|Variables:|Constantes:|variables:|constantes:|début|fin|privé|public|fsi|entier|réel|booléen|caractère|caractères|tableau|Tableau|si|alors|sinon|tantque|faire|nouveau|Classe|écrire|lire|retourne|pour|de|d'entier|à|pas|hasard|div|et|ou|xou|non|chaîne|selon|cas|défaut|fpour|ftq|fselon|tq|mod|autre|appel|chaine|classe|Chaine|chaine)\\b",
+					"captures": {
+						"0": {
+							"name": "keyword.control.algo"
+						}
+					},
+				}
+			]
+		},
+		"folders": {
+			"patterns": [
+				{
+					"name": "keyword.control.algo",
+					"match": "(#)|(#f)",
+					"captures": {
+						"0": {
+							"name": "punctuation.definition.folder.algo"
+						}
+					}
+				}
+			]
 		},
 		"strings": {
 			"name": "string.quoted.double.algo",
@@ -24,6 +93,18 @@
 				{
 					"name": "constant.character.escape.algo",
 					"match": "\\\\."
+				}
+			]
+		},
+		"delimiters": {
+			"patterns": [
+				{
+					"name": "punctuation.definition.string.begin.algo",
+					"match": "00\""
+				},
+				{
+					"name": "punctuation.definition.string.end.algo",
+					"match": "02\""
 				}
 			]
 		}
