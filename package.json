@@ -1,0 +1,25 @@
+{
+  "name": "Algo",
+  "displayName": "Algo Iut Havre",
+  "description": "pseudo code algo iut havre",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.83.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "algo",
+      "aliases": ["Algo Langage Syntaxique ", "algo"],
+      "extensions": [".algo",".pseudo",".plp"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "algo",
+      "scopeName": "source.algo",
+      "path": "./syntaxes/algo.tmLanguage.json"
+    }]
+  }
+}
