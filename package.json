@@ -1,47 +1,57 @@
 {
-  "name": "Algo-Havre",
-  "displayName": "Algo Iut Havre",
-  "description": "pseudo code algo iut havre",
-  "version": "0.0.3",
-  "publisher": "Sajima90",
-  "engines": {
-    "vscode": "^1.83.0"
-  },
-  "categories": [
-    "Programming Languages"
-  ],
-  "contributes": {
-    "languages": [
-      {
-        "id": "algo",
-        "aliases": [
-          "Algo Langage Syntaxique ",
-          "algo"
-        ],
-        "extensions": [
-          ".algo",
-          ".pseudo",
-          ".plp"
-        ],
-        "configuration": "./language-configuration.json"
-      }
-    ],
-    "grammars": [
-      {
-        "language": "algo",
-        "scopeName": "source.algo",
-        "path": "./syntaxes/algo.tmLanguage.json"
-      }
-    ],
-    "snippets": [
-      {
-        "language": "algo",
-        "path": "./snippets/algo.json"
-      }
-    ]
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/sajima90/Algo"
-  }
+	"name": "Algo-Havre",
+	"displayName": "Algo Iut Havre",
+	"description": "pseudo code algo iut havre",
+	"version": "0.0.4",
+	"publisher": "Sajima90",
+	"engines": {
+		"vscode": "^1.83.0"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "algo",
+				"aliases": [
+					"Algo Langage Syntaxique ",
+					"algo"
+				],
+				"extensions": [
+					".algo",
+					".pseudo",
+					".plp"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "algo",
+				"scopeName": "source.algo",
+				"path": "./syntaxes/algo.tmLanguage.json"
+			}
+		],
+		"snippets": [
+			{
+				"language": "algo",
+				"path": "./snippets/algo.json"
+			}
+		]
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/sajima90/Algo"
+	},
+	"__metadata": {
+		"id": "b7bdf1d0-e430-4d70-b0a6-54fba5a97ec7",
+		"publisherId": "4d141ecb-ccbe-4452-8337-ee0f6cf3bbe0",
+		"publisherDisplayName": "Sajima",
+		"targetPlatform": "undefined",
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"installedTimestamp": 1697568471807,
+		"preRelease": false
+	}
 }

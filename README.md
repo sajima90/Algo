@@ -9,7 +9,7 @@
 ## Ajout de La syntaxe d'ecriture pour le pseudo code
 
 - Utilisation : 
-![Alt text](image.png)
+![Alt text](https://github.com/sajima90/Algo/raw/HEAD/image.png)
 ### Utilisation dans le `ctrl + espace`
 Transforme par exemple le <= en ≤
-![Alt text](image-1.png)
+![Alt text](https://github.com/sajima90/Algo/raw/HEAD/image-1.png)
