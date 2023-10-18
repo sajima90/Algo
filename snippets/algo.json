@@ -1,120 +1,321 @@
 {
-    "debut": {
-        "prefix": "debut",
-        "body": [
-            "DEBUT",
-            "$0",
-            "FIN"
-        ],
-        "description": "Début d'algorithme"
-    },
-    "fin": {
-        "prefix": "fin",
-        "body": [
-            "FIN",
-            "$0"
-        ],
-        "description": "Fin d'algorithme"
-    },
-    "si": {
-        "prefix": "si",
-        "body": [
-            "si $1 alors",
-            "\t$0",
-            "fsi"
-        ],
-        "description": "Structure conditionnelle SI"
-    },
-    "sinon": {
-        "prefix": "sinon",
-        "body": [
-            "sinon",
-            "\t$0"
-        ],
-        "description": "Partie SINON d'une structure SI"
-    },
-    "pour": {
-        "prefix": "pour",
-        "body": [
-            "POUR $1 DE $2 A $3 ²",
-            "\t$0",
-            "FPOUR"
-        ],
-        "description": "Boucle POUR"
-    },
-    "tantque": {
-        "prefix": "tantque",
-        "body": [
-            "tq $1 faire",
-            "\t$0",
-            "ftq"
-        ],
-        "description": "Boucle TANTQUE"
-    },
-    "afficher": {
-        "prefix": "afficher",
-        "body": [
-            "affichier $1",
-            "$0"
-        ],
-        "description": "Afficher une valeur"
-    },
-    "lire": {
-        "prefix": "lire",
-        "body": [
-            "lire $1",
-            "$0"
-        ],
-        "description": "Lire une valeur"
-    },
-    "←": {
-        "prefix": "<-",
-        "body": "←$0",
-        "description": "Flèche gauche"
-    },
-    "≤": {
-        "prefix": "<=",
-        "body": "≤$0",
-        "description": "Inférieur ou égal à"
-    },
-    "≥": {
-        "prefix": ">=",
-        "body": "≥$0",
-        "description": "Supérieur ou égal à"
-    },
-    "≠": {
-        "prefix": "!=",
-        "body": "≠$0",
-        "description": "Différent de"
-    },
-    "•": {
-        "prefix": "•",
-        "body": "•$0",
-        "description": "Point médian"
-    },
-    "±": {
-        "prefix": "±",
-        "body": "±$0",
-        "description": "Plus ou moins"
-    },
-    "→": {
-        "prefix": "->",
-        "body": "→$0",
-        "description": "Flèche droite"
-    },
-    "√": {
-        "prefix": "racine",
-        "body": "√$0",
-        "description": "Racine carrée"
-    },
-    "π": {
-        "prefix": "pi",
-        "body": "π$0",
-        "description": "Pi"
-    },
-    "©": {
-        "prefix": "C.",
-        "body": "©$0",
-        "description": "Copyright"
-    }
+	"algorithme": {
+		"prefix": [
+			"Algo"
+		],
+		"body": [
+			"Algo ${1:nom}",
+			"Constantes:",
+			"\n\t$2",
+			"\nVariables:",
+			"\n\t$3",
+			"\nDebut",
+			"\n\t$4",
+			"\nFIN"
+		],
+		"description": "algorithme"
+	},
+
+	"selon": {
+		"prefix": [
+			"selon"
+		],
+		"body": [
+			"selon ${1:operateur}",
+			"\n\tcas $2 :",
+			"\n\tcas $3 :",
+			"\n\tautre cas : $4",
+			"\nfselon"
+		],
+		"description": "selon"
+	},
+	"boucle pour": {
+		"prefix": "pour",
+		"body": [
+			"pour ${1:i} de ${2:0} à ${3:N-1} faire",
+			"\t$0",
+			"fin_pour"
+		],
+		"description": "boucle pour"
+	},
+	"si...alors": {
+		"prefix": "si-alors",
+		"body": [
+			"si ${1:conditon} alors",
+			"\t$0",
+			"fin_si"
+		],
+		"description": "si...alors"
+	},
+	"si...alors...sinon": {
+		"prefix": "si-sinon",
+		"body": [
+			"si ${1:conditon} alors",
+			"\t$0",
+			"sinon",
+			"\t",
+			"fin_si"
+		],
+		"description": "si...alors...sinon"
+	},
+	"boucle tant que": {
+		"prefix": "tq",
+		"body": [
+			"tq ${1:condition} faire",
+			"\t$0",
+			"ftq"
+		],
+		"description": "boucle tant que"
+	},
+	"boucle répéter": {
+		"prefix": [
+			"répéter"
+		],
+		"body": [
+			"répéter",
+			"\t$0",
+			"jusqu'à  ${1:condition}"
+		],
+		"description": "boucle répéter"
+	},
+	"de": {
+		"prefix": "de",
+		"body": [
+			"de $0"
+		]
+	},
+	"debut": {
+		"prefix": "debut",
+		"body": [
+			"DEBUT $0"
+		]
+	},
+	"faire": {
+		"prefix": "faire",
+		"body": [
+			"faire $0"
+		]
+	},
+	"fin": {
+		"prefix": "fin",
+		"body": [
+			"fin $0"
+		]
+	},
+	"fin_pour": {
+		"prefix": "fin_pour",
+		"body": [
+			"fin_pour $0"
+		]
+	},
+	"fin_si": {
+		"prefix": "fin_si",
+		"body": [
+			"fin_si $0"
+		]
+	},
+	"ftq": {
+		"prefix": "ftq",
+		"body": [
+			"ftq $0"
+		]
+	},
+	"jusqu'à": {
+		"prefix": "jusqu'à",
+		"body": [
+			"jusqu'à $0"
+		]
+	},
+	"pas": {
+		"prefix": "pas",
+		"body": [
+			"pas $0"
+		]
+	},
+	"retourne": {
+		"prefix": "retourne",
+		"body": [
+			"retourne $0"
+		]
+	},
+	"sinon": {
+		"prefix": "sinon",
+		"body": [
+			"sinon $0"
+		]
+	},
+	"lire()": {
+		"prefix": "lire",
+		"body": [
+			"lire(${1:une_var}) $0"
+		],
+		"description": "lire()"
+	},
+	"fonction ord()": {
+		"prefix": "ord",
+		"body": [
+			"ord(${1:un_caractère}) $0"
+		],
+		"description": "fonction ord()"
+	},
+	"fonction car()": {
+		"prefix": "car",
+		"body": [
+			"car(${1:code_ascii}) $0"
+		],
+		"description": "fonction ord()"
+	},
+	"écrire()": {
+		"prefix": "écrire",
+		"body": [
+			"écrire(${1:expression}) $0"
+		],
+		"description": "procédure écrire()"
+	},
+	"type booléen": {
+		"prefix": "booléen",
+		"body": [
+			"booléen$0"
+		]
+	},
+	"type caractère": {
+		"prefix": "caractère",
+		"body": [
+			"caractère$0"
+		]
+	},
+	"type chaîne": {
+		"prefix": "chaîne",
+		"body": [
+			"chaîne$0"
+		]
+	},
+	"type entier": {
+		"prefix": "entier",
+		"body": [
+			"entier$0"
+		]
+	},
+	"type réel": {
+		"prefix": "réel",
+		"body": [
+			"réel$0"
+		]
+	},
+	"type tableau": {
+		"prefix": "tableau",
+		"body": [
+			"${1:tab}   : Tableau[${2:20}] ${3:d'entier}$0"
+		]
+	},
+	"opérateur ≥": {
+		"prefix": [
+			">="
+		],
+		"body": [
+			"≥ $0"
+		],
+		"description": "opérateur ≥"
+	},
+	"opérateur ≤": {
+		"prefix": [
+			"<="
+		],
+		"body": [
+			"≤ $0"
+		],
+		"description": "opérateur ≤"
+	},
+	"opérateur ≠": {
+		"prefix": [
+			"!="
+		],
+		"body": [
+			"≠ $0"
+		],
+		"description": "opérateur ≠"
+	},
+	"opérateur √": {
+		"prefix": "racine",
+		"body": "√$0",
+		"description": "Racine carrée"
+	},
+	"→": {
+		"prefix": "->",
+		"body": "→$0",
+		"description": "Flèche droite"
+	},
+	"π": {
+		"prefix": "pi",
+		"body": "π$0",
+		"description": "Pi"
+	},
+	"©": {
+		"prefix": "C.",
+		"body": "©$0",
+		"description": "Copyright"
+	},
+	"•": {
+		"prefix": ".",
+		"body": "•$0",
+		"description": "Point médian"
+	},
+	"±": {
+		"prefix": "+-",
+		"body": "±$0",
+		"description": "Plus ou moins"
+	},
+	"affectation (<--)": {
+		"prefix": [
+			"<--"
+		],
+		"body": [
+			"← $0"
+		],
+		"description": "affectation (<--)"
+	},
+	"afficher": {
+		"prefix": "afficher",
+		"body": [
+			"affichier $1",
+			"$0"
+		],
+		"description": "Afficher une valeur"
+	},
+	"opérateur et": {
+		"prefix": "et",
+		"body": [
+			"et $0"
+		]
+	},
+	"opérateur xou": {
+		"prefix": "xou",
+		"body": [
+			"xou $0"
+		]
+	},
+	"opérateur ou": {
+		"prefix": "ou",
+		"body": [
+			"ou $0"
+		]
+	},
+	"opérateur non": {
+		"prefix": "non",
+		"body": [
+			"non $0"
+		]
+	},
+	"opérateur div": {
+		"prefix": "div",
+		"body": [
+			"div $0"
+		]
+	},
+	"opérateur mod": {
+		"prefix": "mod",
+		"body": [
+			"mod $0"
+		]
+	}
 }

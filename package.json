@@ -2,7 +2,7 @@
 	"name": "Algo-Havre",
 	"displayName": "Algo Iut Havre",
 	"description": "pseudo code algo iut havre",
-	"version": "0.0.4",
+	"version": "0.0.8",
 	"publisher": "Sajima90",
 	"engines": {
 		"vscode": "^1.83.0"
@@ -15,13 +15,12 @@
 			{
 				"id": "algo",
 				"aliases": [
-					"Algo Langage Syntaxique ",
+					"Algo Langage Syntaxique",
 					"algo"
 				],
 				"extensions": [
 					".algo",
-					".pseudo",
-					".plp"
+					".pseudo"
 				],
 				"configuration": "./language-configuration.json"
 			}

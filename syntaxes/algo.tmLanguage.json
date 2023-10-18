@@ -1,114 +1,285 @@
 {
-    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
     "name": "Algo Langage Syntaxique",
-    "patterns": [
-        {
-            "include": "#comments"
-        },
-        {
-            "include": "#numbers"
-        },
-        {
-            "include": "#operators"
-        },
-        {
-            "include": "#keywords"
-        },
-        {
-            "include": "#folders"
-        },
-        {
-            "include": "#strings"
-        },
-        {
-            "include": "#delimiters"
-        }
-    ],
-    "repository": {
-        "comments": {
-            "patterns": [
-                {
-                    "name": "comment.line.algo",
-                    "match": "00(?=.*04)|01(?=.*02)",
-                    "captures": {
-                        "0": {
-                            "name": "punctuation.definition.comment.algo"
-                        }
-                    }
-                }
-            ]
-        },
-        "numbers": {
-            "patterns": [
-                {
-                    "name": "constant.numeric.algo",
-                    "match": "03|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23"
-                }
-            ]
-        },
-        "operators": {
-            "patterns": [
-                {
-                    "name": "keyword.operator.algo",
-                    "match": "-|\\(|\\)|\\[|\\]|<|=|>",
-                    "captures": {
-                        "0": {
-                            "name": "keyword.operator.algo"
-                        }
-                    }
-                }
-            ]
-        },
-        "keywords": {
-            "patterns": [
-                
-                {
-                    "name": "keyword.control.algo",
-                    "match": "\\b(DEBUT|FIN|ALGORITHME|Algo|Variable:|Constante:|CLASSE|SOUS_PROGRAMME|variable:|constante:|Variables:|Constantes:|variables:|constantes:|début|fin|privé|public|fsi|entier|réel|booléen|caractère|caractères|tableau|Tableau|si|alors|sinon|tantque|faire|nouveau|Classe|écrire|lire|retourne|pour|de|d'entier|à|pas|hasard|div|et|ou|xou|non|chaîne|selon|cas|défaut|fpour|ftq|fselon|tq|mod|autre|appel|chaine|classe|Chaine|chaine)\\b",
-                    "captures": {
-                        "0": {
-                            "name": "keyword.control.algo"
-                        }
-                    }
-                }
-            ]
-        },
-        "folders": {
-            "patterns": [
-                {
-                    "name": "keyword.control.algo",
-                    "match": "(#)|(#f)",
-                    "captures": {
-                        "0": {
-                            "name": "punctuation.definition.folder.algo"
-                        }
-                    }
-                }
-            ]
-        },
-        "strings": {
-            "name": "string.quoted.double.algo",
-            "begin": "\"",
-            "end": "\"",
-            "patterns": [
-                {
-                    "name": "constant.character.escape.algo",
-                    "match": "\\\\."
-                }
-            ]
-        },
-        "delimiters": {
-            "patterns": [
-                {
-                    "name": "punctuation.definition.string.begin.algo",
-                    "match": "00\""
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#meta"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#bools"
+		},
+		{
+			"include": "#variables"
+		},
+		{
+			"include": "#entities"
+		},
+		{
+			"include": "#punctuation"
+		},
+		{
+			"include": "#sourcecode_block"
+		}
+	],
+	"repository": {
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.double-slash.algo",
+					"match": "\\/\\/.*"
+				},
+				{
+					"name": "comment.block.algo",
+					"begin": "/\\*",
+					"end": "\\*/"
+				}
+			]
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.flow.algo",
+					"match": "(?i)\\b(à|alors|autres|début|DEBUT|debut|faire|fin|FIN|fin_pour|fin_selon|fselon|fin_si|fsi|ftq|jusqu'à|pas|pour|retourne|répéter|selon|si|sinon|tant que|tq)\\b"
+				},
+				{
+					"name":"support.function.algo",
+					"match": "(?i)\\b(arrondi|écrire|ECRIRE|ecrire|lire|ord|car|cas|autre cas|ouvrir|pointer|pos|valeur|CLASSE|Classe|privé|Privé|public|Public|appel)\\b"
+				},
+				{
+					"name":"entity.name.type.algo",
+					"match": "(?i)\\b(booléen|caractère|de caractère|chaîne|enregistrement|entier|d'entier|fichier|réel|tableau|texte)\\b"
+				},
+				{
+					"name": "keyword.declaration.function.algo",
+					"match": "(?i)\\b(fonction|procédure|SOUS_ALGO)\\b"
+				},
+				{
+					"name": "keyword.declaration.impl.algo",
+					"match": "(?i)\\b(algorithme|ALGORITHME|Algo)\\b"
+				},
+				{
+					"name": "punctuation.definition.keyword.algo",
+					"match": "\\b(@)\\b"
+				},
+				{
+                    "name": "keyword.other.algo",
+                    "match": "(?i)\\b(Variables|Constantes|Types|Début|Fin)\\b"
                 },
-                {
-                    "name": "punctuation.definition.string.end.algo",
-                    "match": "02\""
-                }
-            ]
-        }
-    },
-    "scopeName": "source.algo"
+				{
+					"name": "keyword.other.algo",
+					"match": "(?i)\\b(Nouveaux Types|Objet|Nature / Type)\\b"
+				}
+			]
+		},
+		"operators": {
+			"comment": "Note that the order here is very important!",
+			"patterns": [
+				{
+					"match": "(@)(?=\\w*)",
+					"name": "keyword.operator.address.algo"
+				},
+				{
+					"match": "(?<=[\\s0-9a-zA-ZÀ-ÖÙ-öù-ü_])(<\\-\\-)(?=[\\s0-9a-zA-ZÀ-ÖÙ-öù-ü_])",
+					"name": "keyword.operator.assignment.algo"
+				},
+				{
+					"match": "(<|>|≥|≤|=|≠|←|π|©|√|±|•|→)",
+					"name": "keyword.operator.comparison.algo"
+				},
+				{
+					"match": "(?i)\\b(et|xou|ou|non)\\b",
+					"name": "keyword.operator.logical.algo"
+				},
+				{
+					"match": "(?i)(?<=[\\s0-9a-zA-ZÀ-ÖÙ-öù-ü_])(\\+|\\-|\\*|/|mod|div)(?=[\\s0-9a-zA-ZÀ-ÖÙ-öù-ü_])",
+					"name": "keyword.operator.arithmetic.algo"
+				}
+			]
+		},
+		"meta": {
+			"patterns": [
+				{
+					"name": "meta.function.algo",
+					"begin": "(?i)\\b([a-zA-ZÀ-ÖÙ-öù-ü_][a-zA-ZÀ-ÖÙ-öù-ü0-9_]*)\\(((.*?))\\) *(?:(début))",
+					"end": "(?i)(?:\\}|(fin))",
+					"beginCaptures": {
+						"1": {
+							"name": "keyword.declaration.function.algo"
+						},
+						"2": {
+							"name": "entity.name.function.algo"
+						},
+						"3": {
+							"name": "meta.parameters.algo"
+						},
+						"4": {
+							"name": "variable.parameter.algo"
+						},
+						"5": {
+							"name": "keyword.control.algo"
+						}
+					},
+					"endCaptures": {
+						"1": {
+							"name": "keyword.control.algo"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#comments"
+						},
+						{
+							"include": "#meta"
+						},
+						{
+							"include": "#keywords"
+						},
+						{
+							"include": "#entities"
+						},
+						{
+							"include": "#keywords"
+						},
+						{
+							"include": "#variables"
+						},
+						{
+							"include": "#numbers"
+						},
+						{
+							"include": "#strings"
+						},
+						{
+							"include": "#bools"
+						}
+					]
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.algo",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.algo",
+					"match": "\\\\."
+				}
+			]
+		},
+		"numbers": {
+			"patterns": [
+				{
+					"name": "constant.numeric.integer.algo",
+					"match": "\\b[0-9]+(?![0-9]*\\.)\\b"
+				},
+				{
+					"name": "constant.numeric.float.algo",
+					"match": "\\b[0-9]+\\.[0-9]+\\b"
+				}
+			]
+		},
+		"bools": {
+			"patterns": [{
+				"name": "constant.language.algo",
+				"match": "(?i)\\b(vrai|faux)\\b"
+			}]
+		},
+		"variables": {
+			"patterns": [
+				{
+					"name": "variable.function.algo",
+					"match": "\\b[a-zA-ZÀ-ÖÙ-öù-ü_][a-zA-ZÀ-ÖÙ-öù-ü0-9_]*(?= *\\()\\b"
+				},
+				{
+					"name": "variable.other.algo",
+					"match": "[a-zA-ZÀ-ÖÙ-öù-ü_][a-zA-ZÀ-ÖÙ-öù-ü0-9_]*"
+				},
+				{
+					"name": "variable.parameter.algo",
+					"match": "(?i)(?<=fonction [a-zA-ZÀ-ÖÙ-öù-ü_]\\().*?(?=\\))"
+				},
+				{
+					"name": "variable.parameter.algo",
+					"match": "(?i)(?<=procedure [a-zA-ZÀ-ÖÙ-öù-ü_]\\().*?(?=\\))"
+				}
+			]
+		},
+		"entities": {
+			"patterns": [
+				{
+					"name": "entity.name.function.algo",
+					"match": "\\b[a-zA-ZÀ-ÖÙ-öù-ü_][a-zA-ZÀ-ÖÙ-öù-ü0-9_]*(?= *\\()\\b"
+				}
+			]
+		},
+		"punctuation": {
+			"patterns": [
+				{
+					"name": "punctuation.separator.algo",
+					"match": "(,|;|:)"
+				}
+			]
+		},
+		"sourcecode_block": {
+			"patterns": [
+				{
+					"include": "#python_block"
+				},
+				{
+					"include": "#javascript_block"
+				}
+			]
+		},
+		"python_block": {
+			"begin": "(^|\\G)(\\s*)(`{3,})(?i:(python)((\\s+|:|\\{)[^`]*)?$)",
+			"end": "(^|\\G)(\\2|\\s{0,3})(\\3)\\s*$",
+			"name": "string.regexp.algo",
+			"patterns": [
+				{
+					"begin": "(^|\\G)(\\s*)(.*)",
+					"while": "(^|\\G)(?!\\s*([`]{3,})\\s*$)",
+					"contentName": "meta.embedded.block.python",
+					"patterns": [
+						{
+							"include": "source.python"
+						}
+					]
+				}
+			]
+		},
+		"javascript_block": {
+			"begin": "(^|\\G)(\\s*)(`{3,})(?i:(javascript)((\\s+|:|\\{)[^`]*)?$)",
+			"end": "(^|\\G)(\\2|\\s{0,3})(\\3)\\s*$",
+			"name": "string.regexp.algo",
+			"patterns": [
+				{
+					"begin": "(^|\\G)(\\s*)(.*)",
+					"while": "(^|\\G)(?!\\s*([`]{3,})\\s*$)",
+					"contentName": "meta.embedded.block.javascript",
+					"patterns": [
+						{
+							"include": "source.js"
+						}
+					]
+				}
+			]
+		}
+	},
+	"scopeName": "source.algo"
 }
