@@ -1,0 +1,31 @@
+Algo NomAlgo
+Constantes:
+
+	TAILLE_TABLEAU ←  10
+
+Variables:
+
+	tab   			: Tableau[TAILLE_TABLEAU] d'entier
+	vosVariables	: Entier
+
+Debut
+
+	tq condition faire
+		
+		si conditon alors
+			
+			selon operateur
+			
+				cas 1 :  
+			
+				cas 2 :		
+			
+				autre cas : 
+			
+			fselon
+
+		fin_si
+
+	ftq
+
+FIN

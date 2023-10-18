@@ -43,7 +43,7 @@
 		"body": [
 			"si ${1:conditon} alors",
 			"\t$0",
-			"fin_si"
+			"fsi"
 		],
 		"description": "si...alors"
 	},
@@ -54,7 +54,7 @@
 			"\t$0",
 			"sinon",
 			"\t",
-			"fin_si"
+			"fsi"
 		],
 		"description": "si...alors...sinon"
 	},

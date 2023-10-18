@@ -2,7 +2,8 @@
 	"name": "Algo-Havre",
 	"displayName": "Algo Iut Havre",
 	"description": "pseudo code algo iut havre",
-	"version": "0.0.8",
+	"version": "0.0.9",
+	"icon": "images/icon.png",
 	"publisher": "Sajima90",
 	"engines": {
 		"vscode": "^1.83.0"
